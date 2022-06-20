@@ -2,6 +2,7 @@
   height: 100vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  background-color: var(--white);
 
   & > div {
     display: flex;

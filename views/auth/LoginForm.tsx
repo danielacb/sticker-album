@@ -17,7 +17,10 @@ const LoginForm = () => {
     setError("");
 
     try {
-      const { user, error } = await supabase.auth.signIn({ email, password });
+      const { user, error } = await supabase.auth.signIn({
+        email,
+        password,
+      });
 
       if (error) throw error;
 
@@ -64,7 +67,7 @@ const LoginForm = () => {
       <p>
         Don&apos;t have an account yet?{" "}
         <Link href="/signup">
-          <a>Sign in</a>
+          <a>Sign up</a>
         </Link>
       </p>
     </div>

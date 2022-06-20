@@ -1,12 +1,25 @@
 import type { GetServerSideProps, NextPage } from "next";
+import { useEffect } from "react";
+import MainNav from "../components/MainNav";
+import { useStickers } from "../context";
 import { User } from "../types";
 import { supabase } from "../utils/supabaseClient";
 
-const Home: NextPage<User> = ({ user }) => {
+type Props = {
+  user: User;
+};
+const Home: NextPage<Props> = ({ user }) => {
+  const { setUser } = useStickers();
+
+  useEffect(() => {
+    setUser(user);
+  }, [setUser, user]);
+
   return (
-    <div>
+    <>
+      <MainNav />
       <h1>Hello {user.email}</h1>
-    </div>
+    </>
   );
 };
 

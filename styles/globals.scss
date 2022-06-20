@@ -56,13 +56,17 @@ body {
   margin: 0;
   font-family: 'Inter';
   color: var(--black);
+  background-color: var(--lightgray);
 }
 
 a {
   color: inherit;
+  font-family: 'DM Serif Display';
+  text-decoration: none;
 
   &:hover {
     opacity: 0.8;
+    text-decoration: underline;
   }
 }
 
