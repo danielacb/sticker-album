@@ -3,7 +3,7 @@
   height: 426px;
   position: relative;
   z-index: 1;
-
+  background-color: transparent;
 }
 
 .card {
@@ -48,12 +48,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  color: var(--black);
   
   h3 {
     padding: 1.25rem;
-    font-family: 'DM Serif Display';
-    font-weight: 400;
-    font-size: 2.5rem;
     text-align: center;
     margin: 0;
   }
@@ -65,8 +63,11 @@
     width: calc(100% - 70px);
     bottom: 0;
     left: 0;
+
+    font-weight: 400;
     font-size: 1.25rem;
     line-height: 35px;
+
     text-overflow: ellipsis;
     overflow: hidden; 
     white-space: nowrap;

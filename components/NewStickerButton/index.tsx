@@ -1,7 +1,12 @@
 import { useStickers } from "../../context";
+import { Player } from "../../types";
 import styles from "./styles.module.scss";
 
-const NewStickerButton = () => {
+type Props = {
+  handleNewSticker: (player: Player) => void;
+};
+
+const NewStickerButton = ({ handleNewSticker }: Props) => {
   const { collection, players, updateCollection } = useStickers();
 
   const random = () => players[Math.floor(Math.random() * players.length)];
@@ -15,6 +20,7 @@ const NewStickerButton = () => {
       }
     }
 
+    handleNewSticker(newPlayer);
     updateCollection(newPlayer.id);
   };
 

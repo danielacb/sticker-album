@@ -5,11 +5,12 @@ import styles from "./styles.module.scss";
 type Props = {
   player: Player;
   active: boolean;
+  onClick?: () => void;
 };
 
-const Sticker = ({ player, active }: Props) => {
+const Sticker = ({ player, active, onClick }: Props) => {
   return (
-    <div className={styles.wrapper}>
+    <button className={styles.wrapper} onClick={onClick}>
       <div className={styles.card}>
         {active && (
           <div className={styles.imageContainer}>
@@ -18,6 +19,8 @@ const Sticker = ({ player, active }: Props) => {
               alt={player.name}
               layout="fill"
               objectFit="cover"
+              placeholder="blur"
+              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mMU/g8AASsBFLeWyM0AAAAASUVORK5CYII="
             />
           </div>
         )}
@@ -26,7 +29,7 @@ const Sticker = ({ player, active }: Props) => {
         </div>
         <div className={styles.playerNumber}>{player.number}</div>
       </div>
-    </div>
+    </button>
   );
 };
 

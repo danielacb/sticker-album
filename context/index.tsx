@@ -40,6 +40,8 @@ export const StickersProvider = ({ children }: ProviderProps) => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    setCollection([]);
+
     const getPlayers = async () => {
       try {
         const { data, error } = await supabase
