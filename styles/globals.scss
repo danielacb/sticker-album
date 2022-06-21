@@ -2,6 +2,7 @@
   --white: #fdfdfd;
   --lightgray: #f0f0f0;
   --gray: #dddddd;
+  --darkgray: #a1a1a1;
   --black: #131313;
   --red: #e83434;
 }
@@ -56,7 +57,13 @@ body {
   margin: 0;
   font-family: 'Inter';
   color: var(--black);
+  
   background-color: var(--lightgray);
+  background-image: radial-gradient(var(--gray) 10%, transparent 11%),
+  radial-gradient(var(--gray) 10%, transparent 11%);
+  background-position: 0 0, 10px 10px;
+  background-repeat: repeat;
+  background-size: 20px 20px;
 }
 
 a {

@@ -17,12 +17,19 @@ const LoginForm = () => {
     setError("");
 
     try {
-      const { user, error } = await supabase.auth.signIn({
+      const { user, error, session } = await supabase.auth.signIn({
         email,
         password,
       });
 
       if (error) throw error;
+
+      await fetch("/api/auth", {
+        method: "POST",
+        headers: new Headers({ "Content-Type": "application/json" }),
+        credentials: "same-origin",
+        body: JSON.stringify({ event: "SIGNED_IN", session }),
+      }).then((res) => res.json());
 
       if (user && !error) router.push("/");
     } catch (error: any) {

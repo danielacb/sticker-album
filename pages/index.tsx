@@ -4,6 +4,7 @@ import MainNav from "../components/MainNav";
 import { useStickers } from "../context";
 import { User } from "../types";
 import { supabase } from "../utils/supabaseClient";
+import HomePage from "../views/Home";
 
 type Props = {
   user: User;
@@ -18,7 +19,7 @@ const Home: NextPage<Props> = ({ user }) => {
   return (
     <>
       <MainNav />
-      <h1>Hello {user.email}</h1>
+      <HomePage />
     </>
   );
 };

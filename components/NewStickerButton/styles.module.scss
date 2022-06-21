@@ -1,0 +1,11 @@
+.newStickerButton {
+  background-color: var(--white);
+  border: 4px dashed var(--black);
+  color: var(--black);
+  height: calc(100% - 14px);
+  width: calc(100% - 14px);
+  margin: 0 auto;
+  margin-top: 10px;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
