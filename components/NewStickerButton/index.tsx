@@ -25,12 +25,14 @@ const NewStickerButton = ({ handleNewSticker }: Props) => {
   };
 
   return (
-    <button
-      className={styles.newStickerButton}
-      onClick={() => getRandomPlayer()}
-    >
-      Open new Sticker
-    </button>
+    <div className={styles.wrapper}>
+      <button
+        className={styles.newStickerButton}
+        onClick={() => getRandomPlayer()}
+      >
+        Open new Sticker
+      </button>
+    </div>
   );
 };
 
