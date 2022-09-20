@@ -2,7 +2,8 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { ChangeEvent, FormEvent, useState } from "react";
 import { supabase } from "../../utils/supabaseClient";
-import styles from "./Auth.module.scss";
+
+import { FormContainer, ErrorMessage } from "./styles";
 
 const SignUpForm = () => {
   const router = useRouter();
@@ -37,9 +38,9 @@ const SignUpForm = () => {
   };
 
   return (
-    <div className={styles.formContainer}>
+    <FormContainer>
       <h1>Sign Up</h1>
-      {!!error && <div className={styles.errorMessage}>{error}</div>}
+      {!!error && <ErrorMessage>{error}</ErrorMessage>}
       <form onSubmit={handleSignUp}>
         <label htmlFor="email">Email</label>
         <input
@@ -83,7 +84,7 @@ const SignUpForm = () => {
           <a>Sign in</a>
         </Link>
       </p>
-    </div>
+    </FormContainer>
   );
 };
 

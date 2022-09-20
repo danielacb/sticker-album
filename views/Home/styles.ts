@@ -1,0 +1,11 @@
+import styled from "styled-components";
+
+export const Grid = styled.div`
+  width: 100%;
+  max-width: 1440px;
+  margin: 40px auto 80px;
+
+  display: grid;
+  gap: 1.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+`;

@@ -4,7 +4,8 @@ import { useRouter } from "next/router";
 import { useStickers } from "../../context";
 import Logo from "../../public/logo-sticker-album.svg";
 import { supabase } from "../../utils/supabaseClient";
-import styles from "./styles.module.scss";
+
+import { Nav, NavButton } from "./styles";
 
 const MainNav = () => {
   const router = useRouter();
@@ -25,7 +26,7 @@ const MainNav = () => {
   };
 
   return (
-    <div className={styles.nav}>
+    <Nav>
       <Link href="/">
         <a>
           <Image
@@ -36,8 +37,8 @@ const MainNav = () => {
           />
         </a>
       </Link>
-      <button onClick={() => handleLogout()}>logout</button>
-    </div>
+      <NavButton onClick={() => handleLogout()}>logout</NavButton>
+    </Nav>
   );
 };
 

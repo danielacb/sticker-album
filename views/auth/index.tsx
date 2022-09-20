@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Logo from "../../public/logo-sticker-album.svg";
-import styles from "./Auth.module.scss";
+
+import { Container, Banner, LogoContainer } from "./styles";
 
 type Props = {
   children: React.ReactNode;
@@ -8,19 +9,19 @@ type Props = {
 
 const Auth = ({ children }: Props) => {
   return (
-    <div className={styles.container}>
-      <div className={styles.banner}>
-        <div className={styles.logoContainer}>
+    <Container>
+      <Banner>
+        <LogoContainer>
           <Image
             src={Logo}
             alt="Logo writtern Sticker Album"
             width={330}
             height={132}
           />
-        </div>
-      </div>
+        </LogoContainer>
+      </Banner>
       <div>{children}</div>
-    </div>
+    </Container>
   );
 };
 

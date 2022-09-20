@@ -5,7 +5,8 @@ import PlayerModal from "../../components/PlayerModal";
 import Sticker from "../../components/Sticker";
 import { useStickers } from "../../context";
 import { Player } from "../../types";
-import styles from "./styles.module.scss";
+
+import { Grid } from "./styles";
 
 const HomePage = () => {
   const { players, collection, isLoading } = useStickers();
@@ -19,7 +20,7 @@ const HomePage = () => {
 
   return (
     <>
-      <div className={styles.grid}>
+      <Grid>
         {isLoading ? (
           <Loading />
         ) : (
@@ -37,7 +38,7 @@ const HomePage = () => {
             ))}
           </>
         )}
-      </div>
+      </Grid>
       <PlayerModal
         player={selectedPlayer}
         isOpen={isModalOpen}

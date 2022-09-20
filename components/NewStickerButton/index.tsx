@@ -1,6 +1,7 @@
 import { useStickers } from "../../context";
 import { Player } from "../../types";
-import styles from "./styles.module.scss";
+
+import { Wrapper } from "./styles";
 
 type Props = {
   handleNewSticker: (player: Player) => void;
@@ -25,14 +26,9 @@ const NewStickerButton = ({ handleNewSticker }: Props) => {
   };
 
   return (
-    <div className={styles.wrapper}>
-      <button
-        className={styles.newStickerButton}
-        onClick={() => getRandomPlayer()}
-      >
-        Open new Sticker
-      </button>
-    </div>
+    <Wrapper>
+      <button onClick={() => getRandomPlayer()}>Open new Sticker</button>
+    </Wrapper>
   );
 };
 

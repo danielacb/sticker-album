@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Player } from "../../types";
-import styles from "./styles.module.scss";
+
+import * as S from "./styles";
 
 type Props = {
   player: Player;
@@ -10,10 +11,10 @@ type Props = {
 
 const Sticker = ({ player, active, onClick }: Props) => {
   return (
-    <button className={styles.wrapper} onClick={onClick}>
-      <div className={styles.card}>
+    <S.Wrapper onClick={onClick}>
+      <S.Card>
         {active && (
-          <div className={styles.imageContainer}>
+          <S.ImageContainer>
             <Image
               src={player.picture_url}
               alt={player.name}
@@ -22,14 +23,14 @@ const Sticker = ({ player, active, onClick }: Props) => {
               placeholder="blur"
               blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mMU/g8AASsBFLeWyM0AAAAASUVORK5CYII="
             />
-          </div>
+          </S.ImageContainer>
         )}
-        <div className={styles.playerName}>
+        <S.PlayerName>
           {active ? <span>{player.name}</span> : <h3>{player.name}</h3>}
-        </div>
-        <div className={styles.playerNumber}>{player.number}</div>
-      </div>
-    </button>
+        </S.PlayerName>
+        <S.PlayerNumber>{player.number}</S.PlayerNumber>
+      </S.Card>
+    </S.Wrapper>
   );
 };
 

@@ -1,7 +1,8 @@
 import { useEffect, useLayoutEffect } from "react";
 import { Player } from "../../types";
 import Sticker from "../Sticker";
-import styles from "./styles.module.scss";
+
+import * as S from "./styles";
 
 type Props = {
   player?: Player;
@@ -34,14 +35,12 @@ const PlayerModal = ({ player, isOpen, closeModal }: Props) => {
   if (!isOpen) return <></>;
 
   return (
-    <div className={styles.modalWrapper} onClick={closeModal}>
-      <div className={styles.modal}>
-        <button onClick={closeModal} className={styles.closeModalButton}>
-          X
-        </button>
+    <S.Wrapper onClick={closeModal}>
+      <S.Modal>
+        <S.CloseModalButton>X</S.CloseModalButton>
         {player && <Sticker player={player} active={true} />}
-      </div>
-    </div>
+      </S.Modal>
+    </S.Wrapper>
   );
 };
 

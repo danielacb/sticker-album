@@ -1,10 +1,10 @@
-import styles from "./styles.module.scss";
+import { Wrapper, Spinner } from "./styles";
 
 const Loading = () => {
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.spinner} />
-    </div>
+    <Wrapper>
+      <Spinner />
+    </Wrapper>
   );
 };
 
