@@ -1,0 +1,19 @@
+export const theme = {
+  border: {
+    radius: "1rem",
+  },
+  breakpoints: {
+    huge: "1440px",
+    large: "1024px",
+    medium: "768px",
+    small: "450px",
+  },
+  colors: {
+    white: "#fdfdfd",
+    lightgray: "#f0f0f0",
+    gray: "#dddddd",
+    darkgray: "#a1a1a1",
+    black: "#131313",
+    red: "#e83434",
+  },
+};

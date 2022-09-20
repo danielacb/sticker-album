@@ -1,8 +1,11 @@
 import type { AppProps } from "next/app";
 import { useEffect } from "react";
 import { StickersProvider } from "../context";
-import "../styles/globals.scss";
 import { supabase } from "../utils/supabaseClient";
+
+import { theme } from "../styles/theme";
+import { ThemeProvider } from "styled-components";
+import GlobalStyles from "../styles/global";
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
@@ -23,9 +26,12 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, []);
 
   return (
-    <StickersProvider>
-      <Component {...pageProps} />
-    </StickersProvider>
+    <ThemeProvider theme={theme}>
+      <StickersProvider>
+        <GlobalStyles />
+        <Component {...pageProps} />
+      </StickersProvider>
+    </ThemeProvider>
   );
 }
 
