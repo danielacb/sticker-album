@@ -1,6 +1,7 @@
 export const theme = {
   border: {
     radius: "1rem",
+    smallRadius: "0.5rem",
   },
   breakpoints: {
     huge: "1440px",
@@ -15,5 +16,9 @@ export const theme = {
     darkgray: "#a1a1a1",
     black: "#131313",
     red: "#e83434",
+  },
+  fonts: {
+    inter: "Inter",
+    dmDisplay: '"DM Serif Display"',
   },
 };
