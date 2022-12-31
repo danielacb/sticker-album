@@ -5,7 +5,7 @@ export const Nav = styled.nav`
     width: 100%;
     padding: 1rem 2rem;
     background-color: ${theme.colors.white};
-    border-bottom: 1px solid ${theme.colors.gray};
+    border-bottom: 4px solid ${theme.colors.black};
     display: flex;
     justify-content: space-between;
     align-items: center;
